@@ -1,8 +1,14 @@
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 2rem;
   background: #0a0a0a;
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
   text-align: center;
 }
@@ -48,6 +54,11 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Main Content Reveal */
 #main-content {
   opacity: 0;
@@ -64,18 +75,31 @@ body {
 
 /* Hero Section */
 .hero {
-  height: 100svh;
+  height: 100vh; /* Full window height */
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0; /* Equal spacing handled by flex centering */
 }
 
 .hero h1 {
-  font-size: 10rem;
+  font-size: clamp(2.5rem, 10vw, 10rem);
   margin: 0;
   letter-spacing: 3px;
   word-break: break-word;
   max-width: 90vw;
+  margin-inline: auto;
+  line-height: 1.1;
+  white-space: normal;
+  word-wrap: break-word;
+  hyphens: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero.scrolled h1 {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 
 /* Project Statement, Modules, Team */
@@ -183,75 +207,6 @@ footer {
   transform: translateY(-3px) scale(1.1);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 5rem; }
-  .project-statement,
-  .modules,
-  .team { padding: 1rem 2rem; font-size: 1rem; }
-  .module button { font-size: 1rem; height: 50px; }
-  .team-member { flex-direction: column; align-items: center; text-align: center; }
-  .team-photo { width: 100px; height: 100px; }
-  .team-info h3 { font-size: 1.1rem; }
-  .team-info p { font-size: 0.95rem; }
-}
-
-@media (max-width: 480px) {
-  .word { font-size: 2.5rem; }
-  .hero h1 { font-size: 3rem; }
-  .project-statement p { font-size: 0.95rem; }
-  footer { font-size: 0.8rem; }
-}
-
-@media (min-width: 1024px) {
-  .hero h1 { font-size: 12rem; }
-  .project-statement,
-  .modules,
-  .team { font-size: 1.3rem; }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.about-highlight p {
-  opacity: 0;
-  animation-duration: 0.6s;
-  animation-fill-mode: forwards;
-}
-/* Base Reset & Typography */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 2rem;
-  background: #0a0a0a;
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
-  text-align: center;
-}
-
 /* Header Section */
 .tool-hero {
   margin-bottom: 3rem;
@@ -342,77 +297,49 @@ input[type="url"]::placeholder {
   background: #ddd;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-}
-
-.home-button {
-  display: inline-block;
-  font-size: 1rem;
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.home-button:hover {
-  color: #ccc;
-}
-
 /* Responsive Typography & Layout */
 @media (max-width: 768px) {
+  .hero h1 { font-size: clamp(2rem, 8vw, 5rem); letter-spacing: 2px; }
   .tool-hero h1 { font-size: 2.5rem; }
   .tool-hero p { font-size: 1rem; }
   .tool-form { padding: 1.5rem; }
   .primary-button { font-size: 1rem; height: 45px; }
+  .project-statement,
+  .modules,
+  .team { padding: 1rem 2rem; font-size: 1rem; }
+  .module button { font-size: 1rem; height: 50px; }
+  .team-member { flex-direction: column; align-items: center; text-align: center; }
+  .team-photo { width: 100px; height: 100px; }
+  .team-info h3 { font-size: 1.1rem; }
+  .team-info p { font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
+  .word { font-size: 2.5rem; }
+  .hero h1 { font-size: clamp(1.8rem, 7vw, 3rem); letter-spacing: 1px; }
   .tool-hero h1 { font-size: 2rem; }
   .tool-hero p { font-size: 0.95rem; }
+  .project-statement p { font-size: 0.95rem; }
   footer { font-size: 0.8rem; }
 }
 
 @media (min-width: 1024px) {
+  .hero h1 { font-size: clamp(6rem, 12vw, 12rem); }
   .tool-hero h1 { font-size: 3.5rem; }
   .tool-hero p { font-size: 1.3rem; }
   .tool-form { padding: 2.5rem; }
   .primary-button { font-size: 1.2rem; height: 55px; }
+  .project-statement,
+  .modules,
+  .team { font-size: 1.3rem; }
 }
+
 :root {
-  --section-spacing: 8rem; /* Adjust this value to control vertical rhythm */
+  --section-spacing: 8rem;
 }
 
-/* Hero Section */
-.hero {
-  padding-block: var(--section-spacing); /* Equal top and bottom spacing */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: auto; /* Remove fixed height to allow natural flow */
-}
-
-.hero h1 {
-  font-size: 10rem;
-  margin: 0; /* Remove default margin to avoid stacking */
-  letter-spacing: 3px;
-  word-break: break-word;
-  max-width: 90vw;
-  margin-inline: auto;
-}
-
-/* Project Statement Section */
-.project-statement {
-  margin-top: var(--section-spacing); /* Matches spacing below hero */
-  max-width: 800px;
-  margin-inline: auto;
-  text-align: left;
-  padding: 0 2rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
+.about-highlight p {
+  opacity: 0;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
 }
