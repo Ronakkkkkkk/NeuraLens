@@ -4,130 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claim Verification | NeuraLens</title>
-  <style>
-body {
-  margin: 0;
-  background: #0a0a0a;
-  color: #fff;
-  font-family: sans-serif;
-  overflow-x: hidden;
-  text-align: center;
-  padding: 2rem;
-}
-
-/* Header Section */
-header.tool-hero {
-  margin-bottom: 3rem;
-}
-
-header.tool-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  word-break: break-word;
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-header.tool-hero p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Main Form Section */
-main.tool-form {
-  max-width: 500px;
-  margin: 0 auto 4rem;
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.claim-verification-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.input-label {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  display: block;
-  text-align: left;
-}
-
-textarea {
-  width: 100%;
-  height: 120px;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: none;
-  resize: vertical;
-  background: #fff;
-  color: #000;
-}
-
-button {
-  height: 50px;
-  background: #fff;
-  color: #0a0a0a;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  border-radius: 4px;
-}
-
-button:hover {
-  background: #ddd;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-}
-
-.home-button {
-  display: inline-block;
-  font-size: 1rem;
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.home-button:hover {
-  color: #ccc;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  header.tool-hero h1 { font-size: 2.5rem; }
-  header.tool-hero p { font-size: 1rem; }
-  main.tool-form { padding: 1.5rem; }
-  button { font-size: 1rem; height: 45px; }
-}
-
-@media (max-width: 480px) {
-  header.tool-hero h1 { font-size: 2rem; }
-  header.tool-hero p { font-size: 0.95rem; }
-  footer { font-size: 0.8rem; }
-}
-
-@media (min-width: 1024px) {
-  header.tool-hero h1 { font-size: 3.5rem; }
-  header.tool-hero p { font-size: 1.3rem; }
-  main.tool-form { padding: 2.5rem; }
-  button { font-size: 1.2rem; height: 55px; }
-}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -139,12 +16,12 @@ footer {
 
   <!-- Main Content -->
   <main class="tool-form">
-    <form class="claim-verification-form" action="#" method="POST">
-      <div class="claim-input-wrapper">
-        <label for="claim-text" class="input-label">Enter your claim:</label>
+    <form class="tool-form-wrapper" action="#" method="POST">
+      <div class="form-group">
+        <label for="claim-text" class="form-label">Enter your claim:</label>
         <textarea id="claim-text" name="claim" placeholder="e.g. '5G networks cause health issues'" required></textarea>
       </div>
-      <button type="submit">Verify Claim</button>
+      <button type="submit" class="primary-button">Verify Claim</button>
     </form>
   </main>
 
