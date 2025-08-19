@@ -87,14 +87,16 @@ body {
   font-size: clamp(2.5rem, 10vw, 10rem);
   margin: 0;
   letter-spacing: 3px;
-  word-break: break-word;
   max-width: 90vw;
   margin-inline: auto;
   line-height: 1.1;
-  white-space: normal;
-  word-wrap: break-word;
-  hyphens: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
+
+  /* ✅ Fixes */
+  white-space: nowrap;       /* keep word in one line */
+  word-break: keep-all;      /* prevent breaking inside word */
+  overflow-wrap: normal;     /* prevent forced wrapping */
+  hyphens: none;             /* disable auto hyphenation */
 }
 
 .hero.scrolled h1 {
@@ -299,7 +301,7 @@ input[type="url"]::placeholder {
 
 /* Responsive Typography & Layout */
 @media (max-width: 768px) {
-  .hero h1 { font-size: clamp(2rem, 8vw, 5rem); letter-spacing: 2px; }
+  .hero h1 { font-size: clamp(2rem, 8vw, 4rem); letter-spacing: 2px; }
   .tool-hero h1 { font-size: 2.5rem; }
   .tool-hero p { font-size: 1rem; }
   .tool-form { padding: 1.5rem; }
@@ -316,7 +318,7 @@ input[type="url"]::placeholder {
 
 @media (max-width: 480px) {
   .word { font-size: 2.5rem; }
-  .hero h1 { font-size: clamp(1.8rem, 7vw, 3rem); letter-spacing: 1px; }
+  .hero h1 { font-size: clamp(1.5rem, 7vw, 2.8rem); letter-spacing: 1px; }
   .tool-hero h1 { font-size: 2rem; }
   .tool-hero p { font-size: 0.95rem; }
   .project-statement p { font-size: 0.95rem; }
