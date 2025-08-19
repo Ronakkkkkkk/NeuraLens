@@ -237,3 +237,182 @@ footer {
   animation-duration: 0.6s;
   animation-fill-mode: forwards;
 }
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Header Section */
+.tool-hero {
+  margin-bottom: 3rem;
+}
+
+.tool-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  word-break: break-word;
+  max-width: 90vw;
+  margin-inline: auto;
+}
+
+.tool-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Form Container */
+.tool-form {
+  max-width: 500px;
+  margin: 0 auto 4rem;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Wrapper */
+.tool-form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Labels */
+.form-label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs */
+input[type="file"],
+input[type="url"] {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+}
+
+input[type="url"]::placeholder {
+  color: #555;
+}
+
+/* Button */
+.primary-button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  height: 50px;
+  background: #fff;
+  color: #0a0a0a;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 4px;
+}
+
+.primary-button:hover {
+  background: #ddd;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+.home-button {
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.home-button:hover {
+  color: #ccc;
+}
+
+/* Responsive Typography & Layout */
+@media (max-width: 768px) {
+  .tool-hero h1 { font-size: 2.5rem; }
+  .tool-hero p { font-size: 1rem; }
+  .tool-form { padding: 1.5rem; }
+  .primary-button { font-size: 1rem; height: 45px; }
+}
+
+@media (max-width: 480px) {
+  .tool-hero h1 { font-size: 2rem; }
+  .tool-hero p { font-size: 0.95rem; }
+  footer { font-size: 0.8rem; }
+}
+
+@media (min-width: 1024px) {
+  .tool-hero h1 { font-size: 3.5rem; }
+  .tool-hero p { font-size: 1.3rem; }
+  .tool-form { padding: 2.5rem; }
+  .primary-button { font-size: 1.2rem; height: 55px; }
+}
+:root {
+  --section-spacing: 8rem; /* Adjust this value to control vertical rhythm */
+}
+
+/* Hero Section */
+.hero {
+  padding-block: var(--section-spacing); /* Equal top and bottom spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto; /* Remove fixed height to allow natural flow */
+}
+
+.hero h1 {
+  font-size: 10rem;
+  margin: 0; /* Remove default margin to avoid stacking */
+  letter-spacing: 3px;
+  word-break: break-word;
+  max-width: 90vw;
+  margin-inline: auto;
+}
+
+/* Project Statement Section */
+.project-statement {
+  margin-top: var(--section-spacing); /* Matches spacing below hero */
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: left;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
